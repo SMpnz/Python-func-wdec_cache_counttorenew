@@ -39,22 +39,28 @@ def cacheN(iter=1):
         return wrapper_cache
     return cache
 
-@cacheN(4)
-def heavy(num=0, num2=0, str_arg='3-й аргумент'):
-    print('Сложные вычисления при первом запуске функции: ' 
-    + str(num) + ' ' + str(num2) + ' и ' + str_arg)
-    return "Результат: "+ str(num + num2) + ' и ' + str_arg
 
-for i in range(1,7):
-    print(heavy(1,1))
-    print(heavy(1))
-    print(heavy(2,1))
-    print(heavy())
+def main():
+    @cacheN(4)
+    def heavy(num=0, num2=0, str_arg='3-й аргумент'):
+        print('Сложные вычисления при первом запуске функции: ' 
+        + str(num) + ' ' + str(num2) + ' и ' + str_arg)
+        return "Результат: "+ str(num + num2) + ' и ' + str_arg
 
-@cacheN(5)
-def heavy_second():
-    print('Сложные вычисления при первом запуске функции')
-    return "Результат"
+    for i in range(1,7):
+        print(heavy(1,1))
+        print(heavy(1))
+        print(heavy(2,1))
+        print(heavy())
 
-for i in range(1,7):
-    print(heavy_second())
+    @cacheN(5)
+    def heavy_second():
+        print('Сложные вычисления при первом запуске функции')
+        return "Результат"
+
+    for i in range(1,7):
+        print(heavy_second())
+
+        
+if __name__ == "__main__":
+    main()        
