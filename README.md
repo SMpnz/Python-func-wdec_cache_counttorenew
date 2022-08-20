@@ -3,4 +3,5 @@
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](#)
 
 ##Features
-***@cacheN***  -  декоратор, кеширующий результат вычисления заданное кол-во раз (Пример @cache(3)).
+
+***@cacheN***  -  декоратор, кеширующий результат вычисления заданное кол-во раз (Пример @cacheN(3)).
